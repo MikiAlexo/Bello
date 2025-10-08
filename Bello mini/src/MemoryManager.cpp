@@ -27,5 +27,6 @@ void loadPeriods() {
   EEPROM.get(ADDR_PERIOD_10_H, period_h[9]);
   EEPROM.get(ADDR_PERIOD_10_M, period_m[9]);
 
-  // Loads  periods from EEPROM to ram...
+
 }
+
