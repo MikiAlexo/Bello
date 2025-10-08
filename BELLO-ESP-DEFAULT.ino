@@ -1,3 +1,8 @@
+/* run this code once before uploading the main code, it only works for bello IOT
+It sets default ring schedule for the device.
+Make sure to upload the main code immediately after uploading this code or the RTC will lag behind
+*/
+
 #include <EEPROM.h>
 #include <DS3232RTC.h>
 
@@ -91,4 +96,5 @@ void setTimeDate(byte _hour, byte _minute, byte _second) {
   RTC.set(t);
   setTime(t);
 }
+
 
