@@ -20,16 +20,16 @@ void setup() {
 
 attachInterrupt(digitalPinToInterrupt(manual_pin),ButtonISR,FALLING);
 
-  // screen initialization
+
   display.begin(0x3C, true);
   display.clearDisplay();
   display.drawBitmap(0, 0, splashbello_splash_0, 128, 64, SH110X_WHITE); // creative addis logo splash display
   display.display();
 
- //RTC initialization
+
   setSyncProvider(RTC.get);
   
- //loading from EEPROM
+
   EEPROM.begin();
   loadPeriods();
 
@@ -62,4 +62,5 @@ button_pressed=false;
     bell();
   }
 }
+
 
