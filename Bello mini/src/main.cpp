@@ -8,14 +8,14 @@
 volatile bool buttonPressed = false;
 //interupt service routine
 void buttonISR() {
-    buttonPressed = true;  // Set flag when button is pressed
+    buttonPressed = true; 
 }
 
 void setup() {
 pinMode(Relay_pin,OUTPUT);
 pinMode(Buzzer_pin,OUTPUT);
 pinMode(Manual_pin,INPUT_PULLUP);
-attachInterrupt(digitalPinToInterrupt(Manual_pin),buttonISR,FALLING);//attaching interupt to digital pin that supports it(2) 
+attachInterrupt(digitalPinToInterrupt(Manual_pin),buttonISR,FALLING);
 //initializations
 Serial.begin(9600);
 RTC.begin();
@@ -48,8 +48,9 @@ if(buttonPressed){
 Manual_ring();
 buttonPressed=false;
 }
-//the mainMenu UI to be displayed on the oled
+
 mainMenu();
-//this functions rings the bell by checking time from RTC and the one loaded from EEPROM  
+    
 bell();
 }
+
