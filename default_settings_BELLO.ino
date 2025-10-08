@@ -1,3 +1,8 @@
+/* run this code once before uploading the main code, it works for both bello and bello mini but not bello IOT
+It sets default ring schedule for the device.
+Make sure to upload the main code immediately after uploading this code or the RTC will lag behind
+*/
+
 #include <EEPROM.h>
 #include <DS3232RTC.h>
 
@@ -41,10 +46,10 @@ static byte period_10_h = 14, period_10_m = 45;
 static byte period_11_h = 15, period_11_m = 30;
 
 void setup() {
-  // put your setup code here, to run once:
+
   EEPROM.begin();
   delay(200);
-  //hour
+
   EEPROM.update(ADDR_PERIOD_1_H, period_1_h);
   EEPROM.update(ADDR_PERIOD_2_H, period_2_h);
   EEPROM.update(ADDR_PERIOD_3_H, period_3_h);
@@ -57,7 +62,6 @@ void setup() {
   EEPROM.update(ADDR_PERIOD_10_H, period_10_h);
   EEPROM.update(ADDR_PERIOD_11_H, period_11_h);
 
-  //minute
   EEPROM.update(ADDR_PERIOD_1_M, period_1_m);
   EEPROM.update(ADDR_PERIOD_2_M, period_2_m);
   EEPROM.update(ADDR_PERIOD_3_M, period_3_m);
@@ -71,11 +75,11 @@ void setup() {
   EEPROM.update(ADDR_PERIOD_11_M, period_11_m);
 
   setSyncProvider(RTC.get);
-  setTimeDate(8, 0, 00);
+  setTimeDate(8, 0, 00); //---> put the current time here
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+ 
 }
 void setTimeDate (byte _hour, byte _minute, byte _second) {
   time_t t;
@@ -89,3 +93,4 @@ void setTimeDate (byte _hour, byte _minute, byte _second) {
   RTC.set(t);
   setTime(t);
 }
+
