@@ -11,12 +11,11 @@ byte currentHour = hour();
 byte currentMinute = minute();
 
 String nextbell(String next_bell){
-  // Iterate over periods
   for (byte i = 0; i < 10; i++) {
-    // Check if current period is active
+    // Check if current period is active and update next_bell
     if ((period_h[i] < currentHour || (period_h[i] == currentHour && period_m[i] <= currentMinute)) &&
         (period_h[(i + 1) % 10] > currentHour || (period_h[(i + 1) % 10] == currentHour && period_m[(i + 1) % 10] > currentMinute))) {
-      // Update next_bell
+
       if (byte(period_m[(i + 1) % 10]) < 10)
         zero = "0";
       else if (period_m[(i + 1) % 10] >= 10)
@@ -50,9 +49,7 @@ String ad_O(){
 
 void bell() {
  
-  // Iterate over periods
   for (byte i = 0; i < 10; i++) {
-    // Check if current period's hour and minute match the current time
     if (period_h[i] == currentHour && period_m[i] == currentMinute) {
       Serial.println("ringing");
       ring();
@@ -83,3 +80,4 @@ void setTimeDate (byte _hour, byte _minute, byte _second) {
   RTC.set(t);
   setTime(t);
 }
+
