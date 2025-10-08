@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Schedule</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        table {
+            width: 50%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: white;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        input {
+            width: 80%;
+            padding: 5px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px;
+            background: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #218838;
+        }
+        
+        @media (max-width: 600px) {
+            table {
+                width: 90%;
+            }
+            input {
+                width: 90%;
+                padding: 8px;
+            }
+            button {
+                width: 90%;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Class Schedule</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Period</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+            </tr>
+        </thead>
+        <tbody id="schedule-body"></tbody>
+    </table>
+    <button onclick="saveChanges()">Save Changes</button>
+    <button onclick="ring()">🔔</button>
+    <button onclick="window.location.href='/export'">Download CSV</button>
+
+
+    <script>
+        const scheduleBody = document.getElementById("schedule-body");
+
+        async function loadSchedule() {
+            try {
+                const response = await fetch("/schedule");
+                const data = await response.json();
+                scheduleBody.innerHTML = "";
+
+                data.periods.forEach((period, index) => {
+                    scheduleBody.innerHTML += `
+                        <tr>
+                            <td>Period ${index + 1}</td>
+                            <td><input type="time" value="${period.start}" id="start-${index}" step="60"></td>
+                            <td><input type="time" value="${period.end}" id="end-${index}" step="60"></td>
+                        </tr>
+                    `;
+                });
+            } catch (error) {
+                console.error("Error fetching schedule:", error);
+            }
+        }
+
+        async function saveChanges() {
+            let updatedSchedule = [];
+            for (let i = 0; i < 10; i++) {
+                updatedSchedule.push({
+                    start: document.getElementById(`start-${i}`).value,
+                    end: document.getElementById(`end-${i}`).value
+                });
+            }
+
+            try {
+                await fetch("/update", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ periods: updatedSchedule })
+                });
+
+                alert("Schedule updated successfully!");
+            } catch (error) {
+                console.error("Error updating schedule:", error);
+            }
+        }
+
+        async function ring() {
+            try {
+                let response = await fetch("/ring", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" }
+                });
+
+                if (response.ok) {
+                    alert(" Bell is ringing!");
+                } else {
+                    alert("Failed to ring the bell!");
+                }
+            } catch (error) {
+                console.error("Error:", error);
+                alert("Error sending request!");
+            }
+        }
+        loadSchedule();
+    </script>
+</body>
+</html>
