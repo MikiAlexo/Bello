@@ -5,7 +5,7 @@ int EEPROM_SIZE = 512;
 byte period_h[10];
 byte period_m[10];
 
-// Load schedule from EEPROM
+
 void loadFromEEPROM(byte schedule[10][4]) {
     EEPROM.begin(EEPROM_SIZE);
     for (int i = 0; i < 10; i++) {
@@ -20,7 +20,6 @@ void loadFromEEPROM(byte schedule[10][4]) {
 }
 
 
-// Save schedule to EEPROM
 void saveToEEPROM(byte schedule[10][4]) {  
     EEPROM.begin(EEPROM_SIZE);
     
@@ -34,3 +33,4 @@ void saveToEEPROM(byte schedule[10][4]) {
     EEPROM.commit();
     EEPROM.end();
 }
+
