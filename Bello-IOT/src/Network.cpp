@@ -3,7 +3,7 @@
 WebServer server(80);
 int bell =2;
 
-// Serve the root page with the HTML form
+
 void handleRoot() {
     File file = SPIFFS.open("/index.html", "r");
     if (!file) {
@@ -14,7 +14,7 @@ void handleRoot() {
     file.close();
 }
 
-  // Return the schedule data from EEPROM as JSON
+
 void handleSchedule() {
     StaticJsonDocument<512> doc;
     JsonArray periods = doc.createNestedArray("periods");
@@ -24,12 +24,10 @@ void handleSchedule() {
 
     for (int i = 0; i < 10; i++) {
         JsonObject period = periods.createNestedObject();
-
-        // Extract Start Time
+       
         char startTime[6];
         snprintf(startTime, sizeof(startTime), "%02d:%02d", schedule[i][0], schedule[i][1]);
 
-        // Extract End Time
         char endTime[6];
         snprintf(endTime, sizeof(endTime), "%02d:%02d", schedule[i][2], schedule[i][3]);
 
@@ -156,5 +154,6 @@ void handleRoot() {
   server.streamFile(file, "text/html");
   file.close();
 }
+
 
 */
