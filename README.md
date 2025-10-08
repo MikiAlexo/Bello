@@ -15,3 +15,14 @@ Built with microcontrollers (Arduino / ESP32) using PlatformIO.
 - RTC module (DS3232)
 - Relay: 220 V common / 5 V control
 - OLED SSD1106
+
+### Bello
+#### Requirements
+- PlatformIO
+- Arduino Uno
+- RTC module (DS3232)
+- Relay: 220 V common / 5 V control
+- OLED SSD1106
+- Push buttons x6
+- Passive Buzzer
+- 9v battery
