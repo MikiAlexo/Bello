@@ -18,22 +18,16 @@ void beep() {
 }
 
 void backbeep() {
-  // Define the frequencies for the notes
-//   int D = 1174; // D note 294
+  //defining the frequency of the notes
   int E = 330; 
   int G = 392; 
-//   int A = 880; // A note 440
-//   int B = 494; 
-//   int FSharp = 370; 
-//   int CSharp = 277; 
-  int C = 262; // C note
+  int C = 262;
 
-  // Play the sequence of notes
-
-  tone(beep_pin, C, 100); // A note
+  tone(beep_pin, C, 100); 
   delay(150);
-  tone(beep_pin, E, 100); // D note
+  tone(beep_pin, E, 100); 
   delay(150);
-  tone(beep_pin, G, 100); // D note
+  tone(beep_pin, G, 100);
   delay(250);
 }
+
