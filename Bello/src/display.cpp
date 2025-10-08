@@ -37,9 +37,7 @@ void mainmenu() {
     display.println(F("BELL |"));
     //  display.println("");
     display.setCursor(70, 40);
-    //timee = nextbell();
     display.println(nextbell(next_bell));
-    //  Serial.println(next_bell);
     //  display.println("");
     display.display();
 
@@ -54,7 +52,7 @@ void mainmenu() {
 
 void settings() {
   if (down_pressed()) {
-    //    row += 1;
+ 
     selected += 1;
     beep();
   }
@@ -92,10 +90,9 @@ void settings() {
 
   display.display();
   if (enter_pressed() && main_menu) {
-    //    byte hr = 00 , mn = 00, sec = 00, side = 0;
     if (selected == 3 && !date_and_time) { //back
       main_menu = false;
-      //      selected = 0;
+
     }
     if (selected == 2) {//help and contact
       help_and_contact = true;
@@ -256,7 +253,7 @@ void setbell() {
   if (side > 1)
     side = 0;
 
-  //////////////////////////////////////////
+  
   if (enter_pressed()) {
     delay(200);
     if (period >= 1 && period <= 10) {
@@ -345,11 +342,11 @@ void help_contact() {
   display.println("");
   display.println("");
   display.println(F("[No]-0967761090"));
-  //  display.println(F("/0920351473"));
   display.println("");
   display.println(F("[Web]CreativeAdis.com"));
   display.println("");
   //display.println(F("[Mail]-support.CA.com"));
   display.println(F("[BUILD] BL-V1-1.3'"));
   display.display();
+
 }
