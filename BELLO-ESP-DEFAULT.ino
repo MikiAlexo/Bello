@@ -1,7 +1,7 @@
 #include <EEPROM.h>
 #include <DS3232RTC.h>
 
-#define EEPROM_SIZE 32  // Define the EEPROM size
+#define EEPROM_SIZE 32  // EEPROM size
 
 const byte ADDR_PERIOD_1_H = 0;
 const byte ADDR_PERIOD_1_M = 1;
@@ -43,11 +43,10 @@ DS3232RTC RTC;
 void setup() {
   Serial.begin(115200);
   
-  EEPROM.begin(EEPROM_SIZE);  // Initialize EEPROM with a size
+  EEPROM.begin(EEPROM_SIZE); 
 
   delay(200);
 
-  // Writing values to EEPROM
   EEPROM.write(ADDR_PERIOD_1_H, period_1_h);
   EEPROM.write(ADDR_PERIOD_2_H, period_2_h);
   EEPROM.write(ADDR_PERIOD_3_H, period_3_h);
@@ -72,15 +71,13 @@ void setup() {
   EEPROM.write(ADDR_PERIOD_10_M, period_10_m);
   EEPROM.write(ADDR_PERIOD_11_M, period_11_m);
 
-  EEPROM.commit();  // Save changes to EEPROM
+  EEPROM.commit();
   
   setSyncProvider(RTC.get);
-  setTimeDate(8, 0, 00);
+  setTimeDate(8, 0, 00); //--> put the current time here
 }
 
-void loop() {
-  // Main loop
-}
+void loop(void) {}
 
 void setTimeDate(byte _hour, byte _minute, byte _second) {
   time_t t;
@@ -94,3 +91,4 @@ void setTimeDate(byte _hour, byte _minute, byte _second) {
   RTC.set(t);
   setTime(t);
 }
+
