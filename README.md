@@ -14,7 +14,7 @@ Built with microcontrollers (Arduino / ESP32) using PlatformIO.
 - Arduino Uno
 - RTC module (DS3232)
 - Relay: 220 V common / 5 V control
-- OLED SSD1106
+- OLED SSD1306
 
 ### Bello
 #### Requirements
