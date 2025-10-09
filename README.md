@@ -44,5 +44,17 @@ This is what the finished prototype looks like:- https://youtu.be/g8njpu9FO_w?si
 
 <img width="818" height="542" alt="image" src="https://github.com/user-attachments/assets/4b1f7d41-52da-45fe-8dce-e687dce59458" />
 
+### Buttons Board
+<img width="779" height="461" alt="image" src="https://github.com/user-attachments/assets/aa141d23-3846-4f8c-ba7e-468a1621d22e" />
+
+
+## Overview
+<img width="960" height="1280" alt="image" src="https://github.com/user-attachments/assets/06ddb23d-84a9-452f-b8cb-56de7d921e16" />
+<img width="960" height="1280" alt="image" src="https://github.com/user-attachments/assets/e89e57d6-8454-49bc-9a66-fb3554bbad1a" />
+<img width="1280" height="960" alt="image" src="https://github.com/user-attachments/assets/288813f9-d813-4779-96b8-7460731ff8bb" />
+<img width="960" height="1280" alt="image" src="https://github.com/user-attachments/assets/ac2654e5-ca05-4056-976b-f8a7692ac7ee" />
+watch on youtube: https://youtu.be/g8njpu9FO_w?si=gBSwjOJio-1_8WDL
+
+
 
 
