@@ -49,7 +49,7 @@ This is what the finished prototype looks like:- https://youtu.be/g8njpu9FO_w?si
 
 
 ## Overview
-<img width="760" height="1080" alt="image" src="https://github.com/user-attachments/assets/06ddb23d-84a9-452f-b8cb-56de7d921e16" /> <img width="760" height="1080" alt="image" src="https://github.com/user-attachments/assets/e89e57d6-8454-49bc-9a66-fb3554bbad1a" />
+<img width="542" height="818" alt="image" src="https://github.com/user-attachments/assets/06ddb23d-84a9-452f-b8cb-56de7d921e16" /> <img width="760" height="1080" alt="image" src="https://github.com/user-attachments/assets/e89e57d6-8454-49bc-9a66-fb3554bbad1a" />
 <img width="1080" height="760" alt="image" src="https://github.com/user-attachments/assets/288813f9-d813-4779-96b8-7460731ff8bb" />
 <img width="760" height="1080" alt="image" src="https://github.com/user-attachments/assets/ac2654e5-ca05-4056-976b-f8a7692ac7ee" />
 watch on youtube: https://youtu.be/g8njpu9FO_w?si=gBSwjOJio-1_8WDL
