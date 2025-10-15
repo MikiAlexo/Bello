@@ -63,7 +63,12 @@ You'll need the Arduino IDE for this one and the DS3232 library installed. make 
 
 ### Flashing the main code
 You first need to clone this project into your desiered directory. Then open the project from platform IO and build the project, it might take some time when doing it first time.
-Patform IO automatically downloads all the dependencies for you so it's basicaly plug and play. 
+Patform IO automatically downloads all the dependencies for you so it's basicaly plug and play.
+After building the project you connect the device and ctrl + alt + U to upload the code.
+
+## How to use
+ Bello and Bello mini are straight forward, for bello you have buttons that'll help you navigate the device( mainMenu/OK, UP, DOWN, RIGHT, LEFT). For bello mini there is nothing to do, you just plug it and it just works, no buttons.
+ Bello IOT is a bit different. You first need to connect to the device's wifi hotspot (SSID and Password are in the code), then you type out the IPaddress of the device( also in the code but default is 192.168.1.100) on your browser and it'll take you to a webpage where you can modify the settings.
 
 
 
